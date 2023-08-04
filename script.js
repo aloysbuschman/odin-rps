@@ -24,6 +24,7 @@ function getComputerChoice() {
 function playRound(playerSelection) {
     let computerSelection = getComputerChoice()
     console.log(playerSelection, computerSelection)
+    capitalizedPlayerSelection = playerSelection[0].toUpperCase() + playerSelection.substring(1);
     // Determine if it was a tie
     if (playerSelection === computerSelection) {
         displayGameMessage.textContent = `It was a tie: both parties selected ${playerSelection}`
@@ -36,12 +37,12 @@ function playRound(playerSelection) {
     ) {
         playerScore++
         displayPlayerScore.textContent = playerScore
-        displayGameMessage.textContent = `${playerSelection} beats ${computerSelection}`
+        displayGameMessage.textContent = `${capitalizedPlayerSelection} beats ${computerSelection}`
     // Computer won round 
     } else {
         computerScore++
         displayComputerScore.textContent = computerScore
-        displayGameMessage.textContent = `${playerSelection} gets beaten by ${computerSelection}`
+        displayGameMessage.textContent = `${capitalizedPlayerSelection} gets beaten by ${computerSelection}`
     }
 }
 
